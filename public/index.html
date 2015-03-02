@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Dengue Heat Map</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="ui-style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dengue Heat Map</a>
+      </div>
+    </div><!-- /.container -->
+  </nav>
+
+  <br/>
+
+  <div class="container">
+    <p><h2><center>Singapore Dengue Heat Map</center></h2></p>
+    <br/>
+    <p><center><div id="heatMapHolder" class="heatMapContainer"></div></center></p>
+    <br/>
+    <p><center>
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Date" id="dateSelector" style="width: 260px">
+        </div>
+      </form>
+    </center></p>
+  </div>  
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+  function initialize() {}
+</script>
+<script type="text/javascript" src="libs/heatmap.min.js"></script>
+<script type="text/javascript" src="libs/gmaps-heatmap.js"></script>
+<script type="text/javascript" src="ui-script.js"></script>
+</body>
+</html>
