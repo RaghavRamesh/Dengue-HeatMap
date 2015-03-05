@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="ui-style.css">
+
 </head>
 
 <body>
@@ -36,7 +37,9 @@
   <div class="container">
     <p><h2><center>Singapore Dengue Heat Map</center></h2></p>
     <br/>
-    <p><center><div id="heatMapHolder" class="heatMapContainer"></div></center></p>
+    <p><center><div id="heatMapHolder" class="heatMapContainer"><canvas id="canvasId"></canvas></div></center></p>
+    <p><center><a id="downloadHeatMap">Download</a></center></p>
+    <!-- <p><canvas id="canvasId" src="https://maps.googleapis.com/maps/api/staticmap?center=1.340,103.8200&zoom=11&size=1160x700"></canvas></p> -->
     <br/>
     <p><center>
       <form>
@@ -54,8 +57,15 @@
 <script>
   function initialize() {}
 </script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript" src="libs/heatmap.min.js"></script>
+<!-- <script type="text/javascript" src="libs/leaflet-heatmap.js"></script> -->
 <script type="text/javascript" src="libs/gmaps-heatmap.js"></script>
-<script type="text/javascript" src="ui-script.js"></script>
+<script type="text/javascript" src="libs/html2canvas.js"></script>
+<!-- <script type="text/javascript" src="ui-script.js"></script> -->
+<!-- <script type="text/javascript" src="screenshot.js"></script> -->
+<script type="text/javascript" src="ui-map.js"></script>
+
+<!-- <script type="text/javascript" src="ui-leaflet.js"></script> -->
 </body>
 </html>

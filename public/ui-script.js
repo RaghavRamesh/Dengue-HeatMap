@@ -37,9 +37,24 @@ var divideByFifty = function(data) {
     return convertedData;
 };
 
+var convertDataToLatLng = function(data) {
+    var y_lower = 17000, y_higher = 52000, x_lower = 0, x_higher = 58000, x_diff = x_higher - x_lower, y_diff = y_higher - y_lower, lat_lower = 1.1700043443089982, 
+    lat_higher = 1.4865267420862995, lng_lower = 103.58173868050201, lng_higher = 104.10290194894894, lat_diff = lat_higher - lat_lower, lng_diff = lng_higher - lng_lower;
+    var convertedData = [], tempData = {};
+
+    for (var i = 0; i<data.length; i++) {
+        tempData['north'] = (data[i]['north'] * lat_diff/y_diff) + lat_lower;
+        tempData['east'] = (data[i]['east'] * lng_diff/x_diff) + lng_lower;
+        tempData['cases'] = data[i]['cases'];
+        convertedData.push(tempData);
+        tempData = {};
+    }
+    return convertedData;
+};
+
 var testData = {
     max: 23,
-    data: divideByFifty(data)
+    data: converted(data)
 };
 
 

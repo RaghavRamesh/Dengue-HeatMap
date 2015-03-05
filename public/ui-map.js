@@ -1,14 +1,20 @@
 $("#dateSelector").datepicker();
 
-// don't forget to add gmaps-heatmap.js
-var myLatlng = new google.maps.LatLng(1.340, 103.8200);
+var mapCenter = new google.maps.LatLng(1.340, 103.8200);
 // map options,
-var myOptions = {
+var mapOptions = {
     zoom: 11,
-    center: myLatlng
+    center: mapCenter
 };
 // standard map
-map = new google.maps.Map(document.getElementById("heatMapHolder"), myOptions);
+var map = new google.maps.Map(document.getElementById("heatMapHolder"), mapOptions);
+
+// var marker = new google.maps.Marker({
+//     position: mapCenter,
+//     map: map,
+//     title: 'Testing hello world'
+// });
+
 // heatmap layer
 heatmap = new HeatmapOverlay(map, {
     // radius should be small ONLY if scaleRadius is true (or small radius is intended)
@@ -71,3 +77,29 @@ while (len--) {
 }
 
 console.log("points", points);
+
+
+/**
+ * This is the function that will take care of image extracting and
+ * setting proper filename for the download.
+ * IMPORTANT: Call it from within a onclick event.
+*/
+function downloadCanvas(link, canvas, filename) {
+    link.href = canvas.toDataURL();
+    link.download = filename;
+}
+
+/** 
+ * The event handler for the link's onclick event. We give THIS as a
+ * parameter (=the link element), ID of the canvas and a filename.
+*/
+document.getElementById('downloadHeatMap').addEventListener('click', function() {
+    html2canvas($('#heatMapHolder'), {
+        onrendered: function(canvas) {
+            document.body.appendChild(canvas);
+            downloadCanvas($("#downloadHeatMap"), canvas, 'test.png');        
+        }
+    });
+}, false);
+
+
