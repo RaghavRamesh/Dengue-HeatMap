@@ -12,7 +12,8 @@ Create a heatmap to identify the areas affected by dengue in Singapore as a down
 - Rendered a Singapore view of a Google Map
 - Plotted a heatmap from the given data
 - Captured overlayed heatmap
+- Render as a downloadable image
 
 ###TODO
-- Render as a downloadable image
+
 - Verify lat, lng dimensions against the data provided
