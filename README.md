@@ -8,12 +8,10 @@ Create a heatmap to identify the areas affected by dengue in Singapore as a down
 - heatmap.js - a framework that plots a heat map given data
 - html2canvas.js - for capturing a screenshot of the heatmap
 
-###Progress so far
+###What it contains
 - Rendered a Singapore view of a Google Map
 - Plotted a heatmap from the given data
 - Captured overlayed heatmap
-- Render as a downloadable image
+- Rendered as a downloadable image
+- Verified lat, lng dimensions against the data provided
 
-###TODO
-
-- Verify lat, lng dimensions against the data provided
